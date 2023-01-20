@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+
+    <!--CSS project-->
+    <link rel="stylesheet" href="css/styles.css"></link>
+
+    <!--JS project-->
+    <script src="js/scripts.js" defer></script>
+
+    <!--Icons from IonIcons-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="todo-container">
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
+
+        <!--Add a new task-->
+        <form id="add-task-form">
+            <p>Adicione uma tarefa</p>
+            <div class="form-control">
+                <input type="text" id="task-input" placeholder="O que você vai fazer?"/>
+                <button type="submit" title="Adicionar nova tarefa.">
+                   <ion-icon name="add-outline"></ion-icon>
+                </button>
+            </div>
+            
+        </form>
+
+         <!--Edit select task-->
+        <form id="edit-task-form" class="hide">
+            <p>Edite sua tarefa</p>
+            <div class="form-control">
+                <input type="text" id="edit-input">
+                <button type="submit" title="Salvar edição">
+                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                </button>
+            </div>
+            <button id="cancel-edit-btn">Cancelar</button>
+        </form>
+
+        <div id="tool-bar"> 
+
+           <!--Search task-->
+            <div id="search">
+                <h4>Pesquisar:</h4>
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Buscar..." />
+                    <button id="cln-btn" title="Limpar campo de procura">
+                        <ion-icon name="backspace-outline"></ion-icon>
+                    </button>
+                </form>
+            </div>
+
+            <!--Filter tasks-->
+            <div class="filter">
+                <h4>Filtrar:</h4>
+                <select id="filter-select">
+                   <option value="all">Todos</option>
+                   <option value="done">Completadas</option>
+                   <option value="todo">Não completadas</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!--Task List-->
+        <div id="todo-list">
+        </div>
+    </div>
+</body>
+</html>
